@@ -1,35 +1,91 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <h1>Select which images of animals you would like to see !</h1>
   <style>
-    /* Some basic styling for the page */
+    
+    h1{
+      color: rgb(11, 12, 12);
+      font-size:xxx-large;
+    }
+
+    td {
+      text-align: center;
+    }
+    
+    table {
+      border: 1px solid ;
+      padding: 1px;
+      width: 80%;
+    }
+
     body {
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
       height: 100vh;
+      background-color: #fff7c096;
     }
+    
     button {
       margin: 10px;
       padding: 10px;
-      border: none;
-      border-radius: 5px;
+      border: 1;
+      border-radius: 14px;
       cursor: pointer;
+      background-color: bisque;
+      
     }
+
+    td button:hover{
+      background-color: rgba(0, 0, 0, 0.575);
+      color: #13fdca;
+    }
+    
     #image {
       width: 300px;
       height: 300px;
     }
+
+    @media only screen and (max-width: 600px) {
+  
+  table {
+    display: block;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  main {
+    max-width: none;
+    padding: 10px;
+  }
+
+}
+
+@media only screen and (min-width: 601px) {
+
+ table {
+   padding: 5px;
+ }
+
+ main {
+   padding: 20px;
+ }
+
+}
   </style>
 </head>
 <body>
-  <!-- Create three buttons with different ids -->
-  <button id="cat-button">Show cat images</button>
-  <button id="dog-button">Show dog images</button>
-  <button id="bird-button">Show bird images</button>
+  <table>
+    <tr>
+    <td><button id="cat-button">Show cat images</button></td>
+    <td><button id="dog-button">Show dog images</button></td>
+    <td><button id="bird-button">Show bird images</button></td>
+  </tr>
+</table>
   <!-- Create an image element with an id -->
-  <img id="image" src="" alt="Image">
+  <img id="image" src="https://th.bing.com/th/id/OIP.awCv8Z4RjnCdupJ_MIu3KwHaHa?pid=ImgDet&rs=1" alt="Image">
   <!-- Link the JavaScript file -->
   <script src="Samano-assign11.js"></script>
 </body>

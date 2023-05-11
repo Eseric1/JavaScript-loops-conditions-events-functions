@@ -1,4 +1,3 @@
-// Create three arrays with five elements (images) each
 let catImages = ["https://th.bing.com/th/id/OIP.CBFZpMOFqyCjyHOJxouwVAHaE8?pid=ImgDet&rs=1", 
                  "https://th.bing.com/th/id/R.ae3cb855de10bb7f868ef2e0503bc8bd?rik=kwBBRn2ML4YlzA&riu=http%3a%2f%2f4.bp.blogspot.com%2f-l3C5clBiSbo%2fUPO87pyZkLI%2fAAAAAAAAAg8%2fVtv4ALqGiWE%2fs1600%2fback%2bcat%2b05.jpg&ehk=S6mLHnZSoYJZClBbdj1h4RL%2fctxb4qDUgMdLbJOzPqI%3d&risl=&pid=ImgRaw&r=0",
                  "https://th.bing.com/th/id/OIP.RJYPvckyym6mP0uMT2LoAQAAAA?pid=ImgDet&rs=1", 
@@ -17,12 +16,18 @@ let birdImages = ["https://th.bing.com/th/id/R.9aacc0159d58c8834e3bad1d415bbd5c?
 
 // Create a function that takes an array of images as a parameter
 function showImages(images) {
+  
+  // Clear any previous interval
+  clearInterval(window.interval);
   // Get the image element from the HTML document
   let image = document.getElementById("image");
   // Initialize a variable to keep track of the current index
   let index = 0;
   // Create a function that displays the next image in the array
+  
   function displayNextImage() {
+      // Clear the previous image source
+  image.src = "";
     // Set the source attribute of the image element to the current image in the array
     image.src = images[index];
     // Increment the index by one
@@ -35,7 +40,7 @@ function showImages(images) {
   // Call the displayNextImage function for the first time
   displayNextImage();
   // Use setTimeout to call the displayNextImage function again after one second
-  setTimeout(displayNextImage, 1000);
+  window.interval = setInterval(displayNextImage, 1000);
 }
 
 // Get the buttons from the HTML document
